@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Authorization received — The Clip Feed</title><link rel="icon" href="../assets/pfp.png"><link rel="stylesheet" href="../assets/style.css"></head>
+<body><header><img src="../assets/pfp.png" alt="The Clip Feed logo"><a class="brand" href="../">The Clip Feed</a></header>
+<main>
+<h1 class="ok">Authorization received</h1>
+<p>Your authorization code is shown below. <strong>Nothing has been sent anywhere.</strong> This page only displays the code; it does not store or transmit it.</p>
+<label for="code"><strong>Authorization code</strong> (click the box to select it, then copy it):</label>
+<textarea id="code" class="box" rows="4" readonly onclick="this.select()">(no code found in the address bar)</textarea>
+<h2>What to do next</h2>
+<ol>
+<li>Copy the <strong>full address</strong> from your browser's address bar (it starts with <code>https://</code> and contains <code>?code=</code>). Click the address bar, press Ctrl+A / Cmd+A, then Ctrl+C / Cmd+C.</li>
+<li>Paste it into the publishing tool where it asks for the redirect URL, or send it to the person helping you set up.</li>
+<li>Codes expire quickly, so do this right away. If it fails, start the authorization again.</li>
+</ol>
+<p class="muted" id="err"></p>
+</main>
+<script>
+// Display only: reads the query string locally. No network requests, no storage.
+(function(){var p=new URLSearchParams(location.search);var c=p.get('code');var b=document.getElementById('code');
+if(c){b.value=c;}var e=p.get('error');if(e){document.getElementById('err').textContent='Error returned: '+e+(p.get('error_description')?' — '+p.get('error_description'):'');}})();
+</script>
+<footer>© 2026 The Clip Feed · Vasco Ribeiro, Spain · <a href="mailto:bettencourt.ribeiro@gmail.com">bettencourt.ribeiro@gmail.com</a><br><a href="../">Home</a><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a></footer></body></html>
